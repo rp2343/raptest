@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+      "company-data-proxy": {
+        "matchCondition": {
+          "route": "/api/company-data"
+        },
+        "backendUri": "https://api.bvdinfo.com/v1/orbis/Companies/data"
+      }
+    }
+  }
+  

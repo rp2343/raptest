@@ -1,0 +1,20 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+      "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+      "FUNCTIONS_WORKER_RUNTIME": "node",
+      "CLIENT_ID": "559340ec-030e-4a3b-869b-984da069227f",
+      "CLIENT_SECRET": "HIy8Q~oiYxiF41mnlGdbh-TJWq4ttm-EIdMVvbGG",
+      "AUTH_URL": "https://your-auth-url.com/token",
+      "SCOPE": "your-api-scope",
+      "GRAPH_URL": "https://graph.microsoft.com/v1.0",
+      "CONNECTION_ID": "companies-connector",
+      "API_URL": "https://api.bvdinfo.com/v1/orbis/Companies/data"
+    },
+    "Host": {
+      "LocalHttpPort": 7071,
+      "CORS": "*",
+      "CORSCredentials": false
+    }
+  }
+  

@@ -1,0 +1,39 @@
+import * as fs from 'fs';
+import * as archiver from 'archiver';
+import * as path from 'path';
+import axios from 'axios';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
+
+const output = fs.createWriteStream('companies-connector.zip');
+const archive = archiver('zip');
+
+archive.on('error', function (err) {
+    throw err;
+});
+
+archive.pipe(output);
+
+archive.directory('icons/', 'icons');
+archive.file('manifest.json', { name: 'manifest.json' });
+archive.finalize();
+
+output.on('close', async function () {
+    console.log(archive.pointer() + ' total bytes');
+    console.log('Archiver has been finalized and the output file descriptor has closed.');
+
+    try {
+        const response = await axios.post(`${process.env.TEAMS_ADMIN_CENTER_URL}/upload`, {
+            headers: {
+                Authorization: `Bearer ${process.env.ADMIN_CENTER_TOKEN}`
+            },
+            data: {
+                file: fs.createReadStream(path.resolve(__dirname, 'companies-connector.zip'))
+            }
+        });
+        console.log('Upload successful:', response.data);
+    } catch (error) {
+        console.error('Failed to upload package:', error);
+    }
+});

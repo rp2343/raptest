@@ -1,0 +1,30 @@
+{
+    "name": "companies-connector",
+    "version": "1.0.0",
+    "description": "A Microsoft Graph connector for ingesting company data",
+    "main": "src/app.ts",
+    "scripts": {
+        "start": "ts-node src/app.ts",
+        "build": "tsc",
+        "deploy": "node deploy.js",
+        "predeploy": "npm run build",
+        "azure:func:start": "func start",
+        "azure:create:func": "az functionapp create --resource-group rapfuncgroup --consumption-plan-location eastus --runtime node --functions-version 4 --name rapfunc1 --storage-account rapfuncstore",
+        "azure:func:publish": "func azure functionapp publish rapfunc1"
+    },
+    "dependencies": {
+        "@azure/functions": "^3.0.0",
+        "archiver": "^7.0.1",
+        "axios": "^1.7.7",
+        "dotenv": "^10.0.0",
+        "typescript": "^4.5.0"
+    },
+    "devDependencies": {
+        "@types/archiver": "^6.0.2",
+        "@types/axios": "^0.14.0",
+        "@types/node": "^16.18.108",
+        "ts-node": "^10.4.0"
+    },
+    "author": "Your Name",
+    "license": "MIT"
+}

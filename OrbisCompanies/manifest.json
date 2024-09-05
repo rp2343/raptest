@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.12/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.12",
+  "version": "1.0.0",
+  "id": "a1c127ed-29ce-47fb-ad4a-8836871922ea",
+  "packageName": "com.contoso.companiesconnector",
+  "developer": {
+    "name": "Your Company",
+    "websiteUrl": "https://yourcompany.com",
+    "privacyUrl": "https://yourcompany.com/privacy",
+    "termsOfUseUrl": "https://yourcompany.com/terms"
+  },
+  "name": {
+    "short": "Companies Connector",
+    "full": "Companies Connector for Managing Company Data"
+  },
+  "description": {
+    "short": "Companies Connector",
+    "full": "A Microsoft Graph Connector for managing companies' data."
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#FFFFFF",
+  "connectors": [
+    {
+      "connectorId": "a1c127ed-29ce-47fb-ad4a-8836871922ea",
+      "configurationUrl": "https://yourapp.com/config",
+      "scopes": [
+        "team"
+      ]
+    }  
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "yourapp.com"
+  ],
+  "webApplicationInfo": {
+    "id": "559340ec-030e-4a3b-869b-984da069227f",
+    "resource": "api://559340ec-030e-4a3b-869b-984da069227f"
+  },
+  "graphConnector": {
+    "notificationUrl": "https://rapfunc1.azurewebsites.net/api/notification"
+  }
+}

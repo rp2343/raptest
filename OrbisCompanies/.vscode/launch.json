@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Azure Function",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/functions/HttpTrigger/index.ts",
+      "preLaunchTask": "build",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "sourceMaps": true,
+      "envFile": "${workspaceFolder}/.env",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Attach to Azure Function",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "preLaunchTask": "start-azure-function",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}

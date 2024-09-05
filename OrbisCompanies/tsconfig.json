@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "resolveJsonModule": true,                 // Enable importing of JSON modules
+      "target": "ES6",                           // Specify ECMAScript target version
+      "module": "commonjs",                      // Specify module code generation
+      "strict": true,                            // Enable all strict type-checking options
+      "esModuleInterop": true,                   // Emit __importStar and __importDefault helpers for runtime
+      "skipLibCheck": true,                      // Skip type checking of declaration files
+      "outDir": "./dist",                        // Redirect output structure to the dist folder
+      "rootDir": "./",                           // Specify the root directory of input files
+      "forceConsistentCasingInFileNames": true   // Ensure file names are case-sensitive
+    },
+    "include": [
+      "src/**/*",                               // Include all files under src
+      "config/**/*.json"                        // Include all JSON files under config
+    ],
+    "exclude": [
+      "node_modules",                           // Exclude node_modules directory
+      "**/*.spec.ts"                            // Exclude test files
+    ]
+  }
+  

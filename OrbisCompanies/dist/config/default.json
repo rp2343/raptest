@@ -1,0 +1,42 @@
+{
+    "apiConfig": {
+        "baseUrl": "https://api.bvdinfo.com/v1/orbis/Companies/data",
+        "timeout": 30000,
+        "headers": {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+        },
+        "query": {
+            "WHERE": [
+                {
+                    "Status": "Active"
+                }
+            ],
+            "SELECT": [
+                "NAME",
+                "STATUS",
+                "OPRE",
+                "EMPL",
+                "ORBISID",
+                "BvDId"
+            ],
+            "RANGE": {
+                "MAX": 1000,
+                "OFFSET": 0
+            }
+        },
+        "apiKey": "M49C0535a07c7b6a4f958fcda0efb7a0a88f"
+    },
+    "graphConfig": {
+        "connectionId": "companies-connector",
+        "graphApiUrl": "https://graph.microsoft.com/v1.0"
+    },
+    "retryPolicy": {
+        "maxRetries": 3,
+        "retryDelay": 2000
+    },
+    "schemaConfig": {
+        "schemaId": "your-schema-id",
+        "schemaVersion": "1.0"
+    }
+}

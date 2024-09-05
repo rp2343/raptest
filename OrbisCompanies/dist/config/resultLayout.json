@@ -1,0 +1,24 @@
+{
+    "resultsLayout": {
+        "titleField": "NAME",
+        "subtitleField": "LEGAL_ACCOUNT_INFORMATION.NAME",
+        "fields": [
+            {
+                "displayName": "Name",
+                "fieldName": "NAME"
+            },
+            {
+                "displayName": "BvD Bank Index Number",
+                "fieldName": "BVD_BANK_INDEX_NUMBER"
+            },
+            {
+                "displayName": "Fiscal Year",
+                "fieldName": "Years.FISCAL_YEAR"
+            },
+            {
+                "displayName": "Statement Date",
+                "fieldName": "Years.CLOSING_DATE"
+            }
+        ]
+    }
+}
